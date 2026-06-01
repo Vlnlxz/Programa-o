@@ -29,6 +29,7 @@ Criar algo inovador para ajudar alunos
 - Semana 8: prova teórica
 - Semana 9: roteiro pitch
 - Semana 10: screenshots
+- Semana 11: pitch final
 ## Integrantes e papéis
 |Fabricio|(Back-end)|
 |Vinicius|(Documentação)
