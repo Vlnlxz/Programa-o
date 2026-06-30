@@ -36,6 +36,14 @@ Criar algo inovador para ajudar alunos
 |victor da Silva|(product magner)|
 |Gideão|(scrum master)|
 |Kelvin|(Front-end)
+
+| Prioridade | História de usuário | Critérios de aceite |
+|------------|---------------------|----------------------|
+| must | Como aluno, quero ver o calendario escolar | Calendario |
+| must | Como aluno, quero marcar quando terei provas  | Opçaõ de marcar e notificar o usuario |
+| should | Como aluno, marcar o horario das provas | Avisar quando esta chegando no horario |
+| could | Como aluno, escolher qual materia será a prova | Lista de materias para selecionar |
+
 ## Links úteis
 - **Kanban (Trello):** [https://trello.com/invite/b/6a1d94cf6e15288b6961bee6/ATTI1a58a38fb4522dd5462c9ce40c4b5260D5D5D4B5/calendario-escolar]
 - **Protótipo (Figma)**:https://www.figma.com/make/BhBjUjdE9l0D921kjjZ4Yl/Basic-Calculator-Program?t=4sPh1dcjjnmYk0W4-1
