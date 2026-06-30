@@ -40,7 +40,7 @@ Criar algo inovador para ajudar alunos
 | Prioridade | História de usuário | Critérios de aceite |
 |------------|---------------------|----------------------|
 | must | Como aluno, quero ver o calendario escolar | Calendario |
-| must | Como aluno, quero marcar quando terei provas  | Opçaõ de marcar e notificar o usuario |
+| must | Como aluno, quero marcar quando tera provas  | Opçaõ de marcar e notificar o usuario |
 | should | Como aluno, marcar o horario das provas | Avisar quando esta chegando no horario |
 | could | Como aluno, escolher qual materia será a prova | Lista de materias para selecionar |
 
