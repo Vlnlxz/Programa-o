@@ -45,7 +45,7 @@ Criar algo inovador para ajudar alunos
 | could | Como aluno, escolher qual materia será a prova | Lista de materias para selecionar |
 
 ## Kanban e indicadores
-![ Print do Trello ]( link - da - sua - imagem . jpg )
+![ Print do Trello ](Trello.png)
 | Indicador | Valor |
 | - - - - - - - - - - -| - - - - - - -|
 | WIP ( limite ) | 3 c a r t e s |
