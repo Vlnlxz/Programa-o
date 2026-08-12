@@ -57,7 +57,7 @@ Criar algo inovador para ajudar alunos
 * Tela inicial do MVP *
 ![ Tela de pedido ](Partedomeio.png)
 * Tela onde marca as datas *
-![ C o n f i r m a o ](Partefinal)
+![ C o n f i r m a o ](Partefinal.png)
 * Tela Final *
 
 ## M t r i c a s de v a l i d a o
