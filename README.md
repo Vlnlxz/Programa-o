@@ -48,9 +48,9 @@ Criar algo inovador para ajudar alunos
 ![ Print do Trello ](Trello.png)
 | Indicador | Valor |
 | - - - - - - - - - - -| - - - - - - -|
-| WIP ( limite ) | 3 c a r t e s |
-| Lead Time m d i o | 2 ,5 dias |
-| Cycle Time m d i o | 1 ,2 dias |
+| WIP ( limite ) | 2 c a r t e s |
+| Lead Time m d i o | 1 ,0 dias |
+| Cycle Time m d i o | 16, 0 dias |
 
 ## Screenshots da a p l i c a o
 * Tela inicial do MVP *
