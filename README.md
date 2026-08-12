@@ -53,7 +53,7 @@ Criar algo inovador para ajudar alunos
 | Cycle Time m d i o | 1 ,2 dias |
 
 ## Screenshots da a p l i c a o
-![ Tela inicial ](Captura de tela 2026-08-12 190725.png)
+![ Tela inicial ](Telainicial.png)
 * Tela inicial do MVP *
 ![ Tela de pedido ]( img / tela2 . png )
 * Tela onde o u s u r i o faz o pedido *
