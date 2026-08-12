@@ -65,7 +65,7 @@ Criar algo inovador para ajudar alunos
 -  Total de respostas : 6
 -  Taxa de interesse : 83% disseram que usariam
 -  NPS m d i o : 7 ,5
--  Principais feedbacks :
+-  **Principais feedbacks :**
 - " O app f c i l de usar , mas poderia ter mais o p e s de pagamento ."
 -  Gostei da ideia , mas faltou um tutorial inicial ."  
 
