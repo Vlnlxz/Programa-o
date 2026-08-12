@@ -44,6 +44,31 @@ Criar algo inovador para ajudar alunos
 | should | Como aluno, marcar o horario das provas | Avisar quando esta chegando no horario |
 | could | Como aluno, escolher qual materia será a prova | Lista de materias para selecionar |
 
+## Kanban e indicadores
+![ Print do Trello ]( link - da - sua - imagem . jpg )
+| Indicador | Valor |
+| - - - - - - - - - - -| - - - - - - -|
+| WIP ( limite ) | 3 c a r t e s |
+| Lead Time m d i o | 2 ,5 dias |
+| Cycle Time m d i o | 1 ,2 dias |
+
+## Screenshots da a p l i c a o
+![ Tela inicial ]( img / tela1 . png )
+* Tela inicial do MVP *
+![ Tela de pedido ]( img / tela2 . png )
+* Tela onde o u s u r i o faz o pedido *
+![ C o n f i r m a o ]( img / tela3 . png )
+* Tela de c o n f i r m a o do pedido *
+
+## M t r i c a s de v a l i d a o
+- ** F o r m u l r i o :** [ link do Google Forms ]
+- ** Total de respostas :** 6
+- ** Taxa de interesse :** 83% disseram que usariam
+- ** NPS m d i o :** 7 ,5
+- ** Principais feedbacks :**
+- " O app f c i l de usar , mas poderia ter mais o p e s de pagamento ."
+- " Gostei da ideia , mas faltou um tutorial inicial ."  
+
 ## Links úteis
 - **Kanban (Trello):** [https://trello.com/invite/b/6a1d94cf6e15288b6961bee6/ATTI1a58a38fb4522dd5462c9ce40c4b5260D5D5D4B5/calendario-escolar]
 - **Protótipo (Figma)**:https://www.figma.com/make/BhBjUjdE9l0D921kjjZ4Yl/Basic-Calculator-Program?t=4sPh1dcjjnmYk0W4-1
