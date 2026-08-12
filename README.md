@@ -61,13 +61,13 @@ Criar algo inovador para ajudar alunos
 * Tela de c o n f i r m a o do pedido *
 
 ## M t r i c a s de v a l i d a o
-- ** F o r m u l r i o :** [ link do Google Forms ]
-- ** Total de respostas :** 6
-- ** Taxa de interesse :** 83% disseram que usariam
-- ** NPS m d i o :** 7 ,5
-- ** Principais feedbacks :**
+-  F o r m u l r i o : [ link do Google Forms ]
+-  Total de respostas : 6
+-  Taxa de interesse : 83% disseram que usariam
+-  NPS m d i o : 7 ,5
+-  Principais feedbacks :
 - " O app f c i l de usar , mas poderia ter mais o p e s de pagamento ."
-- " Gostei da ideia , mas faltou um tutorial inicial ."  
+-  Gostei da ideia , mas faltou um tutorial inicial ."  
 
 ## Links úteis
 - **Kanban (Trello):** [https://trello.com/invite/b/6a1d94cf6e15288b6961bee6/ATTI1a58a38fb4522dd5462c9ce40c4b5260D5D5D4B5/calendario-escolar]
