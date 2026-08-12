@@ -55,10 +55,10 @@ Criar algo inovador para ajudar alunos
 ## Screenshots da a p l i c a o
 ![ Tela inicial ](Telainicial.png)
 * Tela inicial do MVP *
-![ Tela de pedido ]( img / tela2 . png )
-* Tela onde o u s u r i o faz o pedido *
-![ C o n f i r m a o ]( img / tela3 . png )
-* Tela de c o n f i r m a o do pedido *
+![ Tela de pedido ](Partedomeio.png)
+* Tela onde marca as datas *
+![ C o n f i r m a o ](Partefinal)
+* Tela Final *
 
 ## M t r i c a s de v a l i d a o
 -  F o r m u l r i o : [https://docs.google.com/forms/d/e/1FAIpQLSfuaCTnSF3xLlHYwMnMN8gDwk5qFy3tL6UvHvJpuLxKrh9Wlw/viewform?usp=sharing&ouid=108574350887974437528]
