@@ -1,0 +1,35 @@
+atividades aula 02
+1.Uma Promise é um objeto que representa o sucesso ou a falha futura de uma operação assíncrona que ainda não foi concluída.
+2.Pending (Pendente): O estado inicial, quando a operação ainda está em execução.
+  Fulfilled (Realizada): Quando a operação foi concluída com sucesso e retornou um valor.
+  Rejected (Rejeitada): Quando a operação falhou e retornou um erro ou motivo da falha.
+3.async function executarBusca() {
+  try {
+    const produto = await buscarProduto(3);
+    console.log(produto);
+  } catch (erro) {
+    console.log(erro);
+  }
+}
+executarBusca();
+4.O await pausa apenas a execução da função assíncrona onde ele está inserido, permitindo que o restante do programa continue rodando normalmente em segundo plano.
+5.O JavaScript precisa saber com antecedência que uma função gerenciará fluxos assíncronos de forma pausável; a palavra-chave async sinaliza ao motor do JS que aquela função específica retornará uma Promise e está autorizada a utilizar a sintaxe de pausa do await.
+6.function buscarProduto(id) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ id, nome: "Produto " + id });
+    }, 1000);
+  });
+}
+7.async function carregarDados() { // Adicionado async aqui
+  const dados = await fetch("https://exemplo.com/api");
+  console.log(dados);
+}
+8.async function carregar() {
+  const resposta = await fetch("https://exemplo.com/api");
+  const dados = await resposta.json(); // Trecho preenchido
+  console.log(dados);
+}
+9.Diferença: Uma falha de rede significa que a conexão nem pôde ser estabelecida (o cliente não alcançou o servidor). Um erro como o 404 significa que a comunicação ocorreu com sucesso, mas o servidor processou o pedido e respondeu explicitamente que o recurso não existe.
+  Por que o fetch não lança erro no 404: O fetch só rejeita a Promise se a requisição falhar fisicamente a nível de rede. Se o servidor responder (mesmo com erros do tipo 400 ou 500), a requisição foi concluída, e o fetch resolve a Promise normalmente, disponibilizando a propriedade resposta.ok como false para que você trate o erro manualmente.
+10.O método .map() é inteiramente síncrono; ele executa a função callback para cada item de forma imediata e sequencial, gerando e retornando as Promises sem aguardar a resolução de nenhuma delas.
