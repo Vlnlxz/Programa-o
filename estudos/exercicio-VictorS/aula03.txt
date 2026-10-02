@@ -1,21 +1,5 @@
-AULA 03 – REACT
+O experimento que mais me incomodou foi esquecer de chamar a função desenhar(), porque a tarefa é adicionada aos dados, mas a tela não é atualizada.
 
-Experimento 1 – Esqueça de propósito
+Isso mostra que é preciso lembrar de atualizar a tela sempre que os dados mudam.
 
-O dado foi adicionado ao vetor, mas a tela não foi atualizada porque a função desenhar() não foi chamada. Posso conferir o vetor usando console.log(tarefas).
-
-Experimento 2 – Perca o que foi digitado
-
-O texto digitado desaparece quando clico em adicionar, porque o innerHTML apaga todos os elementos da lista e eles são criados novamente.
-
-Experimento 3 – Conte quantos lugares
-
-Precisei alterar a função desenhar() para mostrar a quantidade de tarefas feitas e um aviso quando a lista estiver vazia, além de manter o contador atualizado.
-
-Experimento 4 – Quebre a cola
-
-O navegador não mostra um aviso diretamente na página. O JavaScript não encontra o elemento com o ID lista, causando um erro no console quando tenta acessar esse elemento.
-
-Registro
-
-O experimento que mais me incomodou foi o segundo, porque o texto digitado desaparece quando adiciono uma tarefa. Isso acontece porque a lista inteira é apagada e criada novamente. O React ajuda a organizar as atualizações da interface conforme os dados mudam.
+O React resolve esse problema atualizando a interface automaticamente quando o estado muda.
