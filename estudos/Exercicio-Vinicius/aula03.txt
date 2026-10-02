@@ -1,230 +1,74 @@
-const express = require('express');
-const { DatabaseSync } = require('node:sqlite');
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
 
-const app = express();
+    <h1>Lista de Tarefas</h1>
 
-app.use(express.json());
+    <p id="contador"></p>
+    <p id="feitas"></p>
+    <p id="aviso"></p>
 
-// =====================================================
-// BANCO DE DADOS
-// =====================================================
+    <ul id="lista"></ul>
 
-const db = new DatabaseSync('treinos.db');
+    <input id="novo" placeholder="Nova tarefa">
+    <button id="add">Adicionar</button>
 
-db.exec(`
-    CREATE TABLE IF NOT EXISTS treinos (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nome TEXT NOT NULL,
-        duracao INTEGER NOT NULL
-    )
-`);
+    <script>
+        let tarefas = [
+            { id: 1, texto: "Estudar React", feita: false },
+            { id: 2, texto: "Levar o cachorro", feita: true }
+        ];
 
-// =====================================================
-// VALIDAÇÃO
-// =====================================================
+        function desenhar() {
+            const ul = document.getElementById("lista");
+            ul.innerHTML = "";
 
-function validarTreino(corpo) {
-    if (typeof corpo.nome !== 'string' || corpo.nome.trim() === '') {
-        return 'O campo nome e obrigatorio e deve ser um texto.';
-    }
+            for (const t of tarefas) {
+                const li = document.createElement("li");
 
-    if (typeof corpo.duracao !== 'number' || corpo.duracao <= 0) {
-        return 'O campo duracao e obrigatorio e deve ser um numero maior que zero.';
-    }
+                li.textContent = t.texto + (t.feita ? " (feita)" : "");
 
-    return null;
-}
+                const input = document.createElement("input");
+                input.placeholder = "Digite algo";
 
-// =====================================================
-// 7 - CONTAGEM
-// =====================================================
+                li.appendChild(input);
+                ul.appendChild(li);
+            }
 
-app.get('/treinos/total', (req, res) => {
-    const resultado = db
-        .prepare('SELECT COUNT(*) AS total FROM treinos')
-        .get();
+            document.getElementById("contador").textContent =
+                tarefas.length + " tarefas";
 
-    res.status(200).json(resultado);
-});
+            document.getElementById("feitas").textContent =
+                tarefas.filter(t => t.feita).length + " tarefas feitas";
 
-// =====================================================
-// 11 - RESUMO
-// =====================================================
+            document.getElementById("aviso").textContent =
+                tarefas.length === 0 ? "A lista está vazia!" : "";
+        }
 
-app.get('/treinos/resumo', (req, res) => {
-    const resumo = db.prepare(`
-        SELECT
-            COUNT(*) AS total,
-            COALESCE(SUM(duracao), 0) AS minutos,
-            COALESCE(AVG(duracao), 0) AS media
-        FROM treinos
-    `).get();
+        document.getElementById("add").addEventListener("click", () => {
+            const input = document.getElementById("novo");
 
-    res.status(200).json(resumo);
-});
+            if (input.value.trim() === "") {
+                return;
+            }
 
-// =====================================================
-// 2, 8, 9 e 10 - LISTAR, FILTRAR, ORDENAR E BUSCAR
-// =====================================================
+            tarefas.push({
+                id: Date.now(),
+                texto: input.value,
+                feita: false
+            });
 
-app.get('/treinos', (req, res) => {
-    const { minimo, busca } = req.query;
-
-    let sql = 'SELECT * FROM treinos';
-    const valores = [];
-    const condicoes = [];
-
-    // 8 - FILTRO POR DURAÇÃO
-    if (minimo !== undefined) {
-        condicoes.push('duracao >= ?');
-        valores.push(Number(minimo));
-    }
-
-    // 10 - BUSCA POR NOME
-    if (busca !== undefined) {
-        condicoes.push('nome LIKE ?');
-        valores.push(`%${busca}%`);
-    }
-
-    if (condicoes.length > 0) {
-        sql += ' WHERE ' + condicoes.join(' AND ');
-    }
-
-    // 9 - ORDENAR DA MAIOR PARA A MENOR DURAÇÃO
-    sql += ' ORDER BY duracao DESC';
-
-    const treinos = db
-        .prepare(sql)
-        .all(...valores);
-
-    res.status(200).json(treinos);
-});
-
-// =====================================================
-// 4 e 12 - BUSCAR POR ID + ID INVÁLIDO
-// =====================================================
-
-app.get('/treinos/:id', (req, res) => {
-    const id = Number(req.params.id);
-
-    // 12 - Verifica se o ID é um número inteiro
-    if (!Number.isInteger(id)) {
-        return res.status(400).json({
-            erro: 'Id invalido.'
+            input.value = "";
+            desenhar();
         });
-    }
 
-    const treino = db
-        .prepare('SELECT * FROM treinos WHERE id = ?')
-        .get(id);
+        desenhar();
+    </script>
 
-    if (treino === undefined) {
-        return res.status(404).json({
-            erro: 'Treino nao encontrado.'
-        });
-    }
-
-    res.status(200).json(treino);
-});
-
-// =====================================================
-// 3 - CRIAR TREINO
-// =====================================================
-
-app.post('/treinos', (req, res) => {
-    const erro = validarTreino(req.body);
-
-    if (erro !== null) {
-        return res.status(400).json({
-            erro: erro
-        });
-    }
-
-    const resultado = db
-        .prepare(`
-            INSERT INTO treinos (nome, duracao)
-            VALUES (?, ?)
-        `)
-        .run(
-            req.body.nome,
-            req.body.duracao
-        );
-
-    const novo = db
-        .prepare('SELECT * FROM treinos WHERE id = ?')
-        .get(resultado.lastInsertRowid);
-
-    res.status(201).json(novo);
-});
-
-// =====================================================
-// 5 - ATUALIZAR TREINO
-// =====================================================
-
-app.put('/treinos/:id', (req, res) => {
-    const id = Number(req.params.id);
-
-    const treino = db
-        .prepare('SELECT * FROM treinos WHERE id = ?')
-        .get(id);
-
-    if (treino === undefined) {
-        return res.status(404).json({
-            erro: 'Treino nao encontrado.'
-        });
-    }
-
-    const erro = validarTreino(req.body);
-
-    if (erro !== null) {
-        return res.status(400).json({
-            erro: erro
-        });
-    }
-
-    db.prepare(`
-        UPDATE treinos
-        SET nome = ?, duracao = ?
-        WHERE id = ?
-    `).run(
-        req.body.nome,
-        req.body.duracao,
-        id
-    );
-
-    const atualizado = db
-        .prepare('SELECT * FROM treinos WHERE id = ?')
-        .get(id);
-
-    res.status(200).json(atualizado);
-});
-
-// =====================================================
-// 5 - DELETAR TREINO
-// =====================================================
-
-app.delete('/treinos/:id', (req, res) => {
-    const id = Number(req.params.id);
-
-    const treino = db
-        .prepare('SELECT * FROM treinos WHERE id = ?')
-        .get(id);
-
-    if (treino === undefined) {
-        return res.status(404).json({
-            erro: 'Treino nao encontrado.'
-        });
-    }
-
-    db.prepare('DELETE FROM treinos WHERE id = ?').run(id);
-
-    res.status(204).end();
-});
-
-// =====================================================
-// INICIAR SERVIDOR
-// =====================================================
-
-app.listen(3000, () => {
-    console.log('Servidor rodando em http://localhost:3000');
-});
+</body>
+</html>
