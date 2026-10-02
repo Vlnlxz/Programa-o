@@ -1,0 +1,77 @@
+1. Em uma frase, sem código: o que é uma Promise?
+
+Uma Promise é um objeto que representa o resultado futuro de uma operação assíncrona.
+
+2. Quais os três estados possíveis de uma Promise?
+
+pending, fulfilled e rejected.
+
+3. Reescreva usando async/await o código abaixo:
+
+async function buscar() {
+try {
+const produto = await buscarProduto(3);
+console.log(produto);
+} catch (erro) {
+console.log(erro);
+}
+}
+
+buscar();
+
+4. O que exatamente await pausa: o programa inteiro ou só a função onde ele está?
+
+O await pausa somente a função async onde ele está, e não o programa inteiro.
+
+5. Por que colocar await dentro de uma função que não é async dá erro?
+
+Porque o await só pode ser usado dentro de uma função async,
+salvo situações específicas em módulos JavaScript.
+
+6. Escreva uma função assíncrona chamada buscarProduto que recebe um id,
+espera 1 segundo e devolve o objeto { id, nome: "Produto " + id }.
+
+function buscarProduto(id) {
+return new Promise((resolve) => {
+setTimeout(() => {
+resolve({
+id: id,
+nome: "Produto " + id
+});
+}, 1000);
+});
+}
+
+7. O que está errado neste código?
+
+function carregarDados() {
+const dados = await fetch("https://exemplo.com/api");
+console.log(dados);
+}
+
+Está errado porque a função não foi declarada como async,
+mas está usando await.
+
+8. Complete o trecho abaixo para imprimir o corpo da resposta
+já convertido em objeto.
+
+async function carregar() {
+const resposta = await fetch("https://exemplo.com/api");
+const dados = await resposta.json();
+console.log(dados);
+}
+
+9. Qual a diferença entre a requisição falhar e o servidor responder com erro?
+
+Uma falha na requisição acontece quando não é possível obter uma resposta,
+como em uma falha de internet ou servidor indisponível.
+Já um erro como 404 é uma resposta válida do servidor informando que
+o recurso não foi encontrado. O fetch não lança erro automaticamente
+para respostas HTTP como 404.
+
+10. Por que produtos.map(async (p) => await buscarDetalhe(p.id))
+não espera todos os detalhes chegarem?
+
+Porque o map não espera as Promises terminarem.
+Ele cria um array de Promises. Para esperar todas terminarem,
+é necessário usar Promise.all().

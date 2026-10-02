@@ -1,0 +1,5 @@
+O experimento que mais me incomodou foi esquecer de chamar a função desenhar(), porque a tarefa é adicionada aos dados, mas a tela não é atualizada.
+
+Isso mostra que é preciso lembrar de atualizar a tela sempre que os dados mudam.
+
+O React resolve esse problema atualizando a interface automaticamente quando o estado muda.
