@@ -1,9 +1,28 @@
-Aula 04. Nota: 0,05 de 0,10.
+# Feedback individual — Victor Da Silva Martins
 
-Seu index.html é byte a byte igual ao da Bruna Valera, inclusive com o texto do Yoio, que nem é o tema do seu grupo. O histórico do GitHub mostra que a Bruna enviou esse arquivo às 10:59 do dia 23/10 e o seu veio às 14:27 do mesmo dia, depois dela. Na aula você ficou no celular, então não consegui ver você fazendo. Entregar o trabalho de outra pessoa como seu é desonestidade e afeta a nota. Como não consigo validar que o código é seu, a nota fica em 0,05. Para recuperar o restante, venha explicar o código para mim, linha por linha, ou refaça com o tema do seu grupo.
+Victor, sua nota registrada neste levantamento é **0,20 pontos**.
 
-Aula 05. Nota: 0,00 de 0,10.
+| Atividade | Nota | Situação |
+|---|---:|---|
+| Aula 01 | 0,05 | Entrega parcial, com nota reduzida conforme o lançamento. |
+| Aula 02 | 0,05 | Entrega parcial, com nota reduzida conforme o lançamento. |
+| Aula 03 | 0,05 | Entrega parcial, com nota reduzida conforme o lançamento. |
+| Aula 04 | 0,05 | Entrega parcial, com nota reduzida conforme o lançamento. |
+| Aula 05 — JSX | 0,00 | Não foi localizada entrega válida. |
+| Checkpoint 1 — Figma e componentes | 0,00 | Entrega não localizada neste levantamento. |
+| Desconto por recurso além do conteúdo | 0,00 | Nenhum desconto aplicado. |
+| **Total** | **0,20** |  |
 
-Não encontrei a entrega da Aula 05. Nota 0,00.
+## Entregas localizadas
 
-**Nota das Aulas 04 e 05: 0,05 de 0,20.**
+Não foi localizada, neste levantamento, uma entrega individual ou do grupo correspondente ao primeiro checkpoint de Figma e componentes. Por isso, o checkpoint permanece com **0,00** até que uma evidência de entrega seja localizada ou apresentada.
+
+## Situação das aulas
+
+- **Aula 01:** entrega parcial, registrada com 0,05.
+- **Aula 02:** entrega parcial, registrada com 0,05.
+- **Aula 03:** entrega parcial, registrada com 0,05.
+- **Aula 04:** entrega parcial, registrada com 0,05.
+- **Aula 05 — JSX:** não foi localizada entrega válida; nota registrada 0,00.
+
+A nota foi atribuída com base nos arquivos e registros encontrados nos repositórios mapeados. Nenhum desconto foi aplicado por uso de recurso além do conteúdo das aulas.
