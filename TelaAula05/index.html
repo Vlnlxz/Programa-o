@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excluir treino</title>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #F0FDFA;
+    color: #1f2937;
+}
+
+.tela {
+    width: 100%;
+    max-width: 390px;
+    min-height: 844px;
+    margin: auto;
+    padding: 48px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cabecalho h1 {
+    font-size: 20px;
+    margin: 0 0 4px;
+}
+
+.subtitulo {
+    color: #89919b;
+    font-size: 12px;
+    margin: 0;
+}
+
+.cartao {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cartao h2 {
+    font-size: 12px;
+    margin: 0 0 4px;
+}
+
+.cartao p {
+    font-size: 10px;
+    color: #777f91;
+    margin: 0;
+}
+
+.acoes {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.link {
+    background: none;
+    border: none;
+    font-size: 10px;
+    padding: 0;
+}
+
+.editar {
+    color: #109b8c;
+}
+
+.excluir {
+    color: red;
+}
+
+.pergunta {
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.erro {
+    background: #fff0f0;
+    border: 1px solid #f3aaaa;
+    color: #d32f2f;
+    border-radius: 9px;
+    padding: 9px;
+    font-size: 10px;
+}
+
+.botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.confirmar {
+    background: #dc2626;
+    border: 1px solid #dc2626;
+    color: white;
+}
+
+.voltar {
+    background: white;
+    border: 1px solid #ddd;
+    color: #1f2937;
+}
+</style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+
+function TelaExcluirTreino() {
+
+    const treino = {
+        nome: "Corrida leve",
+        duracao: 35
+    };
+
+    const [erro, setErro] = useState("Treino não encontrado.");
+
+    return (
+        <main className="tela">
+
+            <header className="cabecalho">
+                <h1>Excluir treino</h1>
+                <p className="subtitulo">Ação sem volta</p>
+            </header>
+
+            <div className="cartao">
+                <div>
+                    <h2>{treino.nome}</h2>
+                    <p>{treino.duracao} min</p>
+                </div>
+
+                <div className="acoes">
+
+                    {/* Vinicisu */}
+                    <button
+                        className="link editar"
+                        onClick={() => alert("Editar Treino")}
+                    >
+                        editar
+                    </button>
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <p className="pergunta">
+                Tem certeza que deseja excluir "{treino.nome}"?
+                Depois de excluir, o treino não aparece mais na lista.
+            </p>
+
+            {erro !== "" && (
+                <div className="erro">
+                    {erro}
+                </div>
+            )}
+
+            <div className="botoes">
+
+                {/* Vinicius */}
+                <button
+                    className="btn confirmar"
+                    onClick={() => setErro("Treino não encontrado.")}
+                >
+                    Sim, excluir
+                </button>
+
+
+
+
+
+            </div>
+
+        </main>
+    );
+}
+
+ReactDOM.createRoot(document.getElementById("root"))
+.render(<TelaExcluirTreino />);
+</script>
+
+</body>
+</html>
+
