@@ -177,18 +177,13 @@ function TelaExcluirTreino() {
                         editar
                     </button>
 
-                       {/* Gideão */}
-                <button
-                    className="btn voltar"
-                    onClick={() => setErro("")}
-                >
-                    Voltar
-                </button>
-
-
-
-
-
+                 {/* Gideão */}
+                    <button
+                        className="link excluir"
+                        onClick={() => setErro("Treino selecionado para exclusão.")}
+                    >
+                        Excluir
+                    </button>
 
 
                 </div>
@@ -216,7 +211,13 @@ function TelaExcluirTreino() {
                 </button>
 
 
-
+                {/* Gideão */}
+                <button
+                    className="btn voltar"
+                    onClick={() => setErro("")}
+                >
+                    Voltar
+                </button>
 
 
             </div>
