@@ -1,9 +1,1 @@
-Aula 04. Nota: 0,00 de 0,10.
-
-Não encontrei a entrega desta aula. Nota 0,00.
-
-Aula 05. Nota: 0,00 de 0,10.
-
-Não encontrei a entrega desta aula. Nota 0,00.
-
-**Nota das Aulas 04 e 05: 0,00 de 0,20.**
+Este feedback foi substituído. A nota e o motivo do primeiro momento estão no arquivo MOTIVO_NOTA.md desta pasta.
