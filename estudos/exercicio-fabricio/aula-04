@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 04 - Meu Primeiro Componente React</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        function Cabecalho() {
+            return (
+                <header>
+                    <h1>Sistema de Gestão de Resíduos</h1>
+                    <p>Facilitando a reciclagem e o descarte consciente na comunidade.</p>
+                </header>
+            );
+        }
+
+        function Cartao() {
+            return (
+                <div style={{ border: '1px solid #ccc', margin: '8px 0', padding: '10px', borderRadius: '4px' }}>
+                    <h3>Título do Item</h3>
+                    <p>Descrição curta do item.</p>
+                </div>
+            );
+        }
+
+        function Lista() {
+            const tarefas = [
+                { id: 1, texto: "Estudar React" },
+                { id: 2, texto: "Levar o cachorro" },
+                { id: 3, texto: "Revisar o protótipo no Figma" }
+            ];
+
+            return (
+                <div>
+                    <h2>Minhas Tarefas</h2>
+                    <ul>
+                        {tarefas.map((t) => (
+                            <li key={t.id}>{t.texto}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Cabecalho />
+                    <Cartao />
+                    <Cartao />
+                    <Cartao />
+                    <hr />
+                    <Lista />
+                </div>
+            );
+        }
+
+        const raiz = ReactDOM.createRoot(document.getElementById("root"));
+        raiz.render(<App />);
+    </script>
+</body>
+</html>
