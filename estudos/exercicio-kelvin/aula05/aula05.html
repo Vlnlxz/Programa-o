@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 05 - JSX de Verdade</title>
+    <style>
+
+.destaque {
+            background-color: #f0f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+        .feita {
+            color: green;
+            font-weight: bold;
+        }
+        .pendente {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const projeto = "Sistema de Gestão de Treinos";
+        const propostaDeValor = "Organizando sua rotina de exercícios com praticidade.";
+
+        function Cabecalho() {
+            return (
+                <header>
+                    <h1>{projeto}</h1>
+                    <p>{propostaDeValor}</p>
+                </header>
+            );
+        }
+
+        function Cartao() {
+            return (
+                <div className="destaque">
+                    <h3>Cartão de Informação</h3>
+                    <p>Este cartão utiliza estilo vindo do CSS através de className.</p>
+                    {/* Exercício 4/5: Imagem self-closing */}
+                    <img src="https://via.placeholder.com/50" alt="Ícone ilustrativo" />
+                </div>
+            );
+        }
+
+        function Lista() {
+            const tarefas = [
+                { id: 1, texto: "Estudar JSX", feita: true },
+                { id: 2, texto: "Fazer o laboratório da aula 05", feita: true },
+                { id: 3, texto: "Testar a API de Back-End", feita: false }
+            ];
+
+            return (
+                <div>
+                    <h2>Lista de Tarefas do Projeto</h2>
+                    <ul>
+                        {tarefas.map((t) => (
+                            <li key={t.id}>
+                                {t.texto} {" "}
+                                <span className={t.feita ? "feita" : "pendente"}>
+                                    {t.feita ? "(feita)" : "(pendente)"}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <>
+                    <Cabecalho />
+                    <Cartao />
+                    <Lista />
+                </>
+            );
+        }
+
+        const raiz = ReactDOM.createRoot(document.getElementById("root"));
+        raiz.render(<App />);
+    </script>
+</body>
+</html>
